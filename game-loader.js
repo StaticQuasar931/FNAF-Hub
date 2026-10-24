@@ -19,8 +19,8 @@
     #sq-controls a{background:#b93d38}#sq-controls a:hover{background:#d34e47}#sq-controls button:hover{background:#292923}
     #sq-menu-panel{position:absolute;left:0;top:calc(100% + 6px);min-width:180px;padding:5px;background:#191916;border:1px solid #49483f;border-radius:3px;box-shadow:0 10px 24px #0009}
     #sq-menu-panel a,#sq-menu-panel button{display:block;width:100%;text-align:left;background:transparent}
-    #sq-loader{position:fixed;inset:0;z-index:2147482000;display:grid;place-items:center;background:#10100f;color:#f4f1e8;font:600 14px Inter,Arial,sans-serif;letter-spacing:.06em}
-    #sq-loader span{display:block;padding:14px 18px;border:1px solid #49483f;border-radius:3px;background:#191916}
+    #sq-loader{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:2147482000;display:grid;place-items:center;color:#f4f1e8;font:600 11px Inter,Arial,sans-serif;letter-spacing:.03em;pointer-events:none}
+    #sq-loader span{display:block;padding:9px 13px;border:1px solid #49483f;border-radius:3px;background:#14151aeb;box-shadow:0 5px 18px #0007}
     #sq-game-title{position:fixed;z-index:2147481999;top:12.5%;left:50%;transform:translateX(-50%);width:min(600px,54vw);height:11vh;display:grid;place-items:center;background:#19051f;color:#f4f1e8;font:700 clamp(24px,4vw,44px) 'Barlow Condensed',Impact,sans-serif;letter-spacing:.06em;text-transform:uppercase;pointer-events:none}
     #sq-error{position:fixed;inset:0;z-index:2147483500;display:grid;place-items:center;background:#10100ff2;padding:20px}
     #sq-error section{max-width:480px;padding:24px;border:1px solid #504b40;border-radius:4px;background:#191916}

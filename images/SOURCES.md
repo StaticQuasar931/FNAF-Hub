@@ -9,11 +9,13 @@ These locally stored images are real game screenshots or promotional images foun
 | `fnaf-2.jpg` | [ModDB screenshot](https://www.moddb.com/games/five-nights-at-freddys-2/images/screenshot14) |
 | `fnaf-3.jpg` | [Steam Community screenshot](https://steamcommunity.com/app/354140/screenshots/) |
 | `fnaf-4.jpg` | [Steam CDN screenshot](https://cdn.akamai.steamstatic.com/steam/apps/388090/ss_32592700ad0ba14371f8237155a31d8c92bec7c1.1920x1080.jpg) |
+| `fnaf-4-halloween.gif` | [ModDB FNAF 4 Halloween Edition image](https://www.moddb.com/groups/fnaf-theories-arts-and-more/images/pumpkin-jumpscare-fnaf4-halloween-edition) |
 | `fnaf-world.jpg` | [MobyGames screenshot](https://www.mobygames.com/game/157602/fnaf-world/screenshots/windows/1043456/) |
 | `sister-location.jpg` | [PlayStation Store screenshot](https://store.playstation.com/en-gb/product/EP5268-CUSA20139_00-FNAFSL0000000000) |
 | `pizzeria.jpg` | [Pizzeria Simulator screenshot](https://game.limergames.com/c-5361/detail-clickteam-freddyfazbearspizzeriasimulator.html) |
 | `ucn.jpg` | [Gameranx UCN screenshot](https://gameranx.com/features/id/155572/article/ultimate-custom-night-all-easter-eggs-unlockables-secrets-guide/) |
 | `candys.jpg` | [Game Jolt screenshot](https://gamejolt.com/p/what-are-your-thoughts-on-five-nights-at-candy-s-w5eawzts) |
+| `candys-2.jpg` | [Five Nights at Candy's 2 teaser image](https://five-nights-at-candys.fandom.com/wiki/Five_Nights_at_Candy%27s_2) |
 | `winston.jpg` | [OzGames image](https://ozgames.io/five-nights-at-winstons) |
 | `yoshis.jpg` | [Game Jolt screenshot](https://gamejolt.com/games/yoshi-gets-REAL-1/571058) |
 | `baldis.jpg` | [Itch.io screenshot](https://johnsterspacegames.itch.io/five-nights-at-baldis-redone) |

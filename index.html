@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FNAF Night Shift | StaticQuasar931</title>
-  <meta name="description" content="Browse and play a curated collection of Five Nights at Freddy's games and fan games in one simple browser hub.">
+  <meta name="description" content="Browse and play a curated collection of Five Nights at Freddy's games and fan games in one searchable hub.">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#090a10">
+  <meta name="theme-color" content="#111318">
   <link rel="canonical" href="">
   <meta property="og:title" content="FNAF Night Shift | StaticQuasar931">
-  <meta property="og:description" content="Browse and play a curated collection of Five Nights at Freddy's games and fan games in one simple browser hub.">
+  <meta property="og:description" content="Browse and play a curated collection of Five Nights at Freddy's games and fan games in one searchable hub.">
   <meta property="og:image" content="images/pizzeria-stage.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="FNAF Night Shift | StaticQuasar931">
-  <meta name="twitter:description" content="Browse and play a curated collection of Five Nights at Freddy's games and fan games in one simple browser hub.">
+  <meta name="twitter:description" content="Browse and play a curated collection of Five Nights at Freddy's games and fan games in one searchable hub.">
   <meta name="twitter:image" content="images/pizzeria-stage.jpg">
   <link rel="stylesheet" href="styles.css">
   <!-- Google Analytics: StaticQuasar931 property G-ETC235N10B -->
@@ -27,64 +27,50 @@
   <script defer src="hub.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="./" aria-label="FNAF Night Shift home">
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="FNAF Night Shift collection home">
       <span class="brand-mark" aria-hidden="true">F</span>
-      <span><b>FNAF NIGHT SHIFT</b><small>THE GAME COLLECTION</small></span>
+      <span class="brand-copy"><b>FNAF NIGHT SHIFT</b><small>GAME COLLECTION</small></span>
     </a>
-    <div class="header-right"><span class="header-tag"><span id="header-count">17</span> GAMES</span><button id="menu-toggle" class="menu-toggle" type="button" aria-expanded="false">Menu <span aria-hidden="true">☰</span></button></div>
-    <nav class="menu-panel" id="menu-panel" hidden aria-label="Site menu"><a href="#collection">Browse collection</a><a href="https://sites.google.com/view/staticquasar931/gm3z" target="_blank" rel="noopener">More by StaticQuasar931 ↗</a><button id="menu-close" type="button">Close</button></nav>
+    <div class="topbar-right"><span class="header-count"><strong id="header-count">17</strong> TITLES</span><a class="creator-link" href="https://sites.google.com/view/staticquasar931/gm3z" target="_blank" rel="noopener">StaticQuasar931 <span aria-hidden="true">↗</span></a></div>
   </header>
 
-  <main class="page-shell">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-      <p class="eyebrow">FREDDY FAZBEAR'S PIZZERIA · AFTER HOURS</p>
-        <h1 id="hero-title">Five Nights<br><em>at Freddy's</em></h1>
-        <p class="hero-description">A collection of FNAF games and fan-made nights. Find a title and start playing.</p>
-        <div class="hero-actions">
-          <a class="primary-button" href="#collection"><span>Browse the collection</span><span aria-hidden="true">↓</span></a>
-          <span class="hero-note">Classics · fan games · browser ports</span>
+  <main class="library" id="collection">
+    <section aria-labelledby="collection-title">
+      <div class="collection-heading">
+        <div><p class="eyebrow">FREDDY FAZBEAR'S · AFTER HOURS</p><h1 id="collection-title">Choose a game<span>.</span></h1></div>
+        <p class="heading-note">Browse the collection, find a version, and jump into the night.</p>
+      </div>
+
+      <div class="control-panel">
+        <div class="toolbar" role="search">
+          <label class="search-box" for="game-search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+            <input id="game-search" type="search" placeholder="Search titles or versions" autocomplete="off">
+            <kbd>/</kbd>
+          </label>
+          <label class="sort-control" for="game-sort"><span>Order</span>
+            <select id="game-sort"><option value="release">Series order</option><option value="title">Title</option><option value="fan">Fan games first</option></select>
+          </label>
+          <button class="direction-button" id="sort-direction" type="button" aria-label="Reverse sort order" title="Reverse sort order">↑</button>
         </div>
-      </div>
-      <div class="hero-art" role="img" aria-label="An empty pizzeria stage after closing time"></div>
-    </section>
-
-    <section class="collection" id="collection" aria-labelledby="collection-title">
-      <div class="section-heading">
-        <div><p class="eyebrow">PICK YOUR NIGHT</p><h2 id="collection-title">The collection<span class="heading-period">.</span></h2></div>
-        <p class="collection-count"><span id="result-count">17</span> titles</p>
-      </div>
-
-      <div class="toolbar" role="search">
-        <label class="search-box" for="game-search">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
-          <input id="game-search" type="search" placeholder="Search the collection" autocomplete="off">
-          <kbd>/</kbd>
-        </label>
-        <label class="sort-control" for="game-sort"><span>Sort</span>
-          <select id="game-sort"><option value="release">Series order</option><option value="title">Title</option><option value="fan">Fan games first</option></select>
-        </label>
-        <button class="direction-button" id="sort-direction" type="button" aria-label="Reverse sort order" title="Reverse order">↑</button>
-      </div>
-
-      <div class="filter-row" aria-label="Filter collection">
-        <button class="filter-chip is-active" data-filter="all" type="button">All <span>17</span></button>
-        <button class="filter-chip" data-filter="official" type="button">Main series</button>
-        <button class="filter-chip" data-filter="fan" type="button">Fan made</button>
-        <button class="filter-chip" data-filter="spin-off" type="button">Other</button>
+        <div class="control-bottom">
+          <div class="filter-row" aria-label="Filter collection">
+            <button class="filter-chip is-active" data-filter="all" type="button">All <span>17</span></button>
+            <button class="filter-chip" data-filter="official" type="button">Main series</button>
+            <button class="filter-chip" data-filter="spin-off" type="button">Spin-offs</button>
+            <button class="filter-chip" data-filter="fan" type="button">Fan games</button>
+          </div>
+          <p class="collection-count"><span id="result-count">17</span> titles shown</p>
+        </div>
       </div>
 
       <div class="game-grid" id="game-grid" aria-live="polite"></div>
-      <div class="empty-state" id="empty-state" hidden><h3>No titles found</h3><p>Try a different search or clear it.</p><button id="clear-search" type="button">Clear search</button></div>
+      <div class="empty-state" id="empty-state" hidden><h2>No titles found</h2><p>Try another search or clear the filters.</p><button id="clear-search" type="button">Clear search</button></div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>Unofficial fan collection. Game names, images, and credits belong to their respective creators.</p>
-    <span>Made by StaticQuasar931</span>
-  </footer>
-
+  <footer class="site-footer"><span>Unofficial fan collection. Game names, images, and credits belong to their respective creators.</span><a href="images/SOURCES.md">Image sources</a></footer>
   <script src="visual-seo.js" defer></script>
 </body>
 </html>
