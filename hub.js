@@ -8,17 +8,28 @@ const emptyState = document.querySelector("#empty-state");
 let activeFilter = "all";
 let descending = false;
 
+const coverImages = {
+  "fnaf-1":"fnaf-1.jpg", "fnaf-2":"fnaf-2.jpg", "fnaf-3":"fnaf-3.jpg",
+  "fnaf-3-remastered":"fnaf-3.jpg", "fnaf-4":"fnaf-4.jpg", "fnaf-4-halloween":"fnaf-4.jpg",
+  "fnaf-world":"fnaf-world.jpg", "sister-location":"sister-location.jpg",
+  "pizzeria-simulator":"pizzeria.jpg", "ultimate-custom-night":"ucn.jpg",
+  "five-nights-at-candys-1":"candys.jpg", "five-nights-at-candys-2":"candys.jpg",
+  "five-nights-at-winstons":"winston.jpg", "five-nights-at-yoshis":"yoshis.jpg",
+  "five-nights-at-baldis-redone":"baldis.jpg", "frickbears-3":"frickbears.jpg", "fnaf-shooter":"shooter.jpg"
+};
+const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+
 function cardMarkup(game, index) {
-  const cover = `covers/${game.slug}.svg`;
+  const cover = `images/${coverImages[game.slug] || "fnaf-1.jpg"}`;
   const href = `items/${game.slug}/index.html`;
   return `<article class="game-card" style="animation-delay:${Math.min(index,12)*28}ms">
     <a class="card-cover" href="${href}" aria-label="Play ${game.title}">
-      <img src="${cover}" alt="Original illustrated cover for ${game.title}" loading="lazy" width="640" height="360">
-      <span class="card-tag">${game.kind}</span><span class="card-number">${String(Math.round(game.order)).padStart(2,"0")}</span>
+      <img src="${cover}" alt="${escapeHtml(game.title)} gameplay screenshot" loading="lazy" width="640" height="360">
+      <span class="card-tag">${escapeHtml(game.kind)}</span>
     </a>
     <div class="card-content"><p class="card-kicker">${game.group === "official" ? "THE MAIN SERIES" : game.group === "spin-off" ? "SIDE STORY" : "FAN-MADE PORT"}</p>
-      <h3 class="card-title">${game.title}</h3>
-      <div class="card-bottom"><span class="card-type">${game.short}</span><a class="play-link" href="${href}">Play <span aria-hidden="true">↗</span></a></div>
+      <h3 class="card-title">${escapeHtml(game.title)}</h3>
+      <div class="card-bottom"><span class="card-type">${escapeHtml(game.short)}</span><a class="play-link" href="${href}">Play game <span aria-hidden="true">→</span></a></div>
     </div>
   </article>`;
 }
@@ -54,11 +65,18 @@ document.querySelectorAll(".filter-chip").forEach(button => button.addEventListe
   render();
 }));
 document.querySelector("#clear-search").addEventListener("click", () => { searchInput.value = ""; activeFilter = "all"; document.querySelector(".filter-chip.is-active")?.classList.remove("is-active"); document.querySelector('[data-filter="all"]').classList.add("is-active"); render(); searchInput.focus(); });
+const menuToggle = document.querySelector("#menu-toggle");
+const menuPanel = document.querySelector("#menu-panel");
+function setMenu(open) { menuPanel.hidden = !open; menuToggle.setAttribute("aria-expanded", String(open)); }
+menuToggle.addEventListener("click", () => setMenu(menuPanel.hidden));
+document.querySelector("#menu-close").addEventListener("click", () => { setMenu(false); menuToggle.focus(); });
+document.addEventListener("click", event => { if (!menuPanel.hidden && !menuPanel.contains(event.target) && !menuToggle.contains(event.target)) setMenu(false); });
+document.addEventListener("keydown", event => { if (event.key === "Escape") setMenu(false); });
 document.addEventListener("keydown", event => { if (event.key === "/" && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) { event.preventDefault(); searchInput.focus(); } });
 const canonical = document.querySelector('link[rel="canonical"]');
 if (canonical) canonical.href = location.origin + location.pathname;
 console.log("StaticQuasar931 FNAF Hub - https://sites.google.com/view/staticquasar931/gm3z");
 fetch(new URL("games.json", location.href))
   .then(response => { if (!response.ok) throw new Error(`Game catalog request failed (${response.status}).`); return response.json(); })
-  .then(games => { catalog = games; render(); })
+  .then(games => { catalog = games; render(); document.querySelector("#header-count").textContent = String(games.length); document.querySelector("[data-filter='all'] span").textContent = String(games.length); })
   .catch(error => { grid.innerHTML = `<p class="catalog-error">The game list could not load. Refresh the page to try again. <small>${error.message}</small></p>`; });

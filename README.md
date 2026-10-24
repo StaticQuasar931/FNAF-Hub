@@ -1,21 +1,20 @@
-# StaticQuasar931 FNAF Hub
+# StaticQuasar931 FNAF Night Shift
 
-A searchable Five Nights at Freddy's game hub with 18 individual game pages. Each game page loads its source HTML from the upstream project and keeps the original game assets remote, so the repository stays small.
+A searchable browser hub for 17 Five Nights at Freddy's games and fan games. Game pages load from their configured upstream sources in `games.json`; the images used in the collection are stored locally in `images/`.
 
-## Run it
+## Run locally
 
-Open this folder with a local web server. Browsers block the cross-origin game source fetch when these pages are opened as `file://` documents. Run `node serve.mjs` from this folder, then open `http://localhost:8765`.
+Open a terminal in this folder and run `node serve.mjs`, then visit `http://localhost:8765`. Use a local web server because browsers block remote game requests from `file://` pages. The games require an internet connection.
 
-The game pages need an internet connection. They fetch game HTML from GitHub or jsDelivr and load game assets from the source page's configured CDN. If an upstream file or asset is removed, that entry may stop working until its source URL is updated in `games.json`.
+## Browse and play
 
-## Controls
+- Search by game title, short name, or category. Press `/` to focus the search.
+- Filter by main series, fan games, or other titles. Choose a sort order and use the arrow to reverse it.
+- Select **Play game** to open the game. Select **Hub** to return. Press **Shift+B** to hide or restore the game controls.
+- The top-right **Menu** contains the collection and StaticQuasar931 links.
 
-- Search by game name, short name, or category. Press `/` to focus search.
-- Choose series order, title, or fan games first. Use the arrow button to reverse the order.
-- Open a card to start its game. The game is fitted to the browser window while preserving its canvas aspect ratio.
-- Use **Back to hub** to return. Press **Shift+B** to show or hide the game controls.
-- Press **Y**, **U**, then **I** to show or hide the StaticQuasar visual menu and rotating social widget.
+FNAF 1's known obfuscated redirect block is removed before its loader runs. FNaF Shooter's source splash screen and original loading stylesheet are replaced with a plain progress screen. A source or asset host can still be unavailable; these browser games are loaded from external projects.
 
-The rotating widget uses the Google Form, Discord, and Instagram assets and links supplied for StaticQuasar931. The menu reappears three minutes after it is closed. The pages use the `G-ETC235N10B` Google Analytics property and contain no hidden SEO text.
+This is an unofficial collection. Game names and game imagery belong to their respective creators. Image sources are documented in `images/SOURCES.md`.
 
-This is an unofficial fan-game collection. Original game names, in-game marks, and creator credits remain with their respective owners. No original game binaries are copied into this repository.
+The hub and game pages use only the provided Google Analytics property `G-ETC235N10B`. They contain no hidden SEO text.
