@@ -1,0 +1,7 @@
+# Generated Google Apps Script projects and their contents
+/GoogleScriptPages/
+
+# Keep only the FNAF 4 Halloween mirror in the push
+/cdn/genizy-fnaf/*
+!/cdn/genizy-fnaf/4-halloween/
+!/cdn/genizy-fnaf/4-halloween/**

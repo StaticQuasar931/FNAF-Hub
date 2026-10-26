@@ -18,3 +18,7 @@ FNAF 1's known obfuscated redirect block is removed before its loader runs. FNaF
 This is an unofficial collection. Game names and game imagery belong to their respective creators. Image sources are documented in `images/SOURCES.md`.
 
 The hub and game pages use only the provided Google Analytics property `G-ETC235N10B`. They contain no hidden SEO text.
+
+## Google Apps Script assets
+
+The generated Apps Script exports in `GoogleScriptPages/` are ignored by Git. Runtime assets blocked under the upstream `genizy` CDN account are mirrored in `cdn/genizy-fnaf/` and referenced through `https://cdn.jsdelivr.net/gh/StaticQuasar931/FNAF-Hub@main/cdn/genizy-fnaf/`. Push the mirror to the `main` branch before using those generated Apps Script pages. `source-manifest.json` records the upstream commit and every mirrored runtime file.
